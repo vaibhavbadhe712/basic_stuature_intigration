@@ -2,6 +2,8 @@
 
 
 import 'package:basic_intigration/view/phoneScreen/phone_screen.dart';
+import 'package:basic_intigration/view/phoneScreen/task_management/create_task_screen.dart';
+import 'package:basic_intigration/view/phoneScreen/task_management/task_first_screen.dart';
 import 'package:basic_intigration/view/phoneScreen/verify_otp_screen/verify_otp_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +13,8 @@ class Routes {
   static const String initalRoute = '/home';
  
   static const String otpScreen = '/otp';
+  static const String  createTask='/createTask';
+static const String  assignTask='/assignTask';
 
   
 
@@ -32,6 +36,14 @@ class Routes {
             phoneNumber:phoneNumber,
           );
         }
+      ),
+       GoRoute(
+        path: createTask,
+        builder: (context, state) =>  TaskCreateScreen(),
+      ),
+      GoRoute(
+        path: assignTask,
+        builder: (context, state) =>  TaskManagementScreen(),
       ),
     ],
   );

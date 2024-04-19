@@ -2,8 +2,10 @@ import 'package:basic_intigration/constant/app_enums.dart';
 import 'package:basic_intigration/controller/util_controller/utils_controller.dart';
 import 'package:basic_intigration/main.dart';
 import 'package:basic_intigration/utils/api/api_base.dart';
+import 'package:basic_intigration/utils/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../utils/preferences/local_preferences.dart';
 
@@ -32,7 +34,7 @@ class VerifyOtpController extends GetxController {
     await _apiBase.post(apiEndpoints.verifyOtp, payload, (data) {
       _isLoading(false);
             // utilscontroller he ek custom snackbar ahe jo appan kuthe hi wapru shakto
-
+               context.go(Routes.createTask);
       Get.find<UtilsController>().showSnackBar(
         content: data['message'],
         context: context,

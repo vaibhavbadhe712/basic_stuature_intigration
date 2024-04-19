@@ -1,5 +1,6 @@
 
 
+import 'package:basic_intigration/controller/task_controller/task_controller.dart';
 import 'package:basic_intigration/controller/util_controller/utils_controller.dart';
 import 'package:get/get.dart';
 
@@ -12,5 +13,6 @@ void initialBiniding() {
 Get.lazyPut<HomePageControler>(() => HomePageControler());
 Get.lazyPut<SendOtpController>(() => SendOtpController());
 Get.lazyPut<VerifyOtpController>(() => VerifyOtpController());
+Get.lazyPut<TaskController>(() => TaskController());
   
 }
